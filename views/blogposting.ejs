@@ -1,58 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- web dev simplied on youtube via github -->
+<!-- web dev simplied on youtube via github -->
+
 <head>
-  <meta charset="UTF-8">
+  <title>New Post</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="assets/css/main.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Make new Post</title>
+
 </head>
+
 <body>
-<h1>blog posting page</h1>
-  <nav class="site-navBar">
-    <ul class="ulofnavbar" id="green">
-    <li><a href="/index" class="button primary">Home</a></li>
-    <li><a href="/emergency" class="button primary">Emergency</a></li>
-    <li><a href="/#first" class="button primary">Mission</a></li>
-    <li><a href="/blogposting" class="button primary">Make a post</a></li>
-    <li><a href="/blog" class="button primary">Blog</a></li>
-    <li><a href="/resources" class="button primary">Resources</a></li>
-    </ul>
-  </nav>
+
+  <header>
+
+    <nav class="bnavBar">
+      <ul class="ulofnavbar" id="green">
+        <li><a href="/index" class="button btn btn-outline-dark">Home</a></li>
+        <li><a href="/emergency" class="button btn btn-outline-dark">Emergency</a></li>
+        <li><a href="/#first" class="button btn btn-outline-dark">Mission</a></li>
+        <li><a href="/profile" class="button btn btn-outline-dark">Profile</a></li>
+        <li><a href="/blog" class="button btn btn-outline-dark">Blog</a></li>
+        <li><a href="/resources" class="button btn btn-outline-dark">Resources</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+
 
   <div class="container">
-    <h1 class="mb-4">Your Blog Articles</h1>
-    <a href="/newarticle" class="btn btn-success">New Article</a>
+    <h1 class="mb-4">Most Recent Blog Post</h1>
+    <a href="/newarticle" class="btn btn-outline-dark">Make New Post</a>
 
     <!-- worked with Trek Mentor to further understand how this connects back to the DB-->
-  <!-- each article posted -->
+    <!-- each article posted -->
     <% article.forEach(newarticle => { %>
-      <!-- this connects to the db on mongo, make sure that the collection key value pairs match up to the js variables -->
-      <div class="card mt-4">
+    <!-- this connects to the db on mongo, make sure that the collection key value pairs match up to the js variables -->
+    <div class="card mt-4">
 
-        <!-- first blog post -->
-        <div class="card-body">
-          <h4 class="card-title"><%= newarticle.title %></h4>
-          <div class="card-subtitle text-muted mb-2">
-            <%= newarticle.createdAt %>
-          </div>
-          <div class="card-text mb-2"><%= newarticle.description %></div>
-
-            <a href="/blogpersonal/<%= newarticle._id %>" class="btn btn-primary">Read More</a>
-
-          <a href="/edit/<%= newarticle._id %>" class="btn btn-info">Edit</a>
-
-          <form action="/blogposting/<%= newarticle._id %>" method="DELETE" class="d-inline">
-            <button type="submit" class="btn btn-danger">Delete</button>
-          </form>
-
+      <!-- first blog post -->
+      <div class="card-body">
+        <h4 class="card-title"><%= newarticle.title %></h4>
+        <div class="card-subtitle text-muted mb-2">
+          <%= newarticle.createdAt %>
         </div>
+        <div class="card-text mb-2"><%= newarticle.description %></div>
+
+
+        <form action="/blogposting/<%= newarticle._id %>" method="DELETE" class="d-inline">
+          <button type="submit" class="btn btn-outline-danger">Delete</button>
+        </form>
+
+        <a href="/edit/<%= newarticle._id %>" class="btn btn-outline-dark">Edit</a>
+
+
+        <a href="/blogpersonal/<%= newarticle._id %>" class="btn btn-outline-dark">Read More</a>
+
+
       </div>
+    </div>
     <% }) %>
 
   </div>
 
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- Footer -->
+  <footer id="footer">
+    <h2>Contact Miggie Garcia, Founder</h2>
+    <ul class="icons">
+      <li><a href="https://twitter.com/miggiegarciadev" class="icon brands twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="http://www.miggiegarciadev.com/" class="icon brands portfolio"><span class="label">Portfolio</span></a></li>
+      <li><a href="https://www.linkedin.com/in/miggiegarcia/" class="icon brands linkedin"><span class="label">Linked In</span></a></li>
+      <li><a href="https://github.com/miggiegarciadev" class="icon brands github"><span class="label">GitHub</span></a></li>
+      <li><a href="mailto:miggiegarciadev@gmail.com" class="icon brands email"><span class="label">Email</span></a></li>
+    </ul>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
 
 </body>
+
 </html>

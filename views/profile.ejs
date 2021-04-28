@@ -21,36 +21,67 @@
     </ul>
   </nav>
 
+<br>
+<br>
+<br>
+
+<h1>My Profile</h1>
+
   <div class="container">
 
     <div class="page-header text-center">
-      <h1><span class="fa fa-anchor"></span> Profile Page</h1>
-      <!-- <a href="/logout" class="btn btn-default btn-sm">Logout</a> -->
     </div>
 
-    <div class="col-4 site-logo">
-      <a href="/#second" class="text-black h2 mb-0">Empowering the Military Mind</a>
-    </div>
-
+<br>
 
     <div class="row">
+
+
+
+      <div class="col-sm-6" id="affirm">
+        <h3>Affirmations</h3>
+        <ul class="messages">
+          <% for(var i=0; i< messages.length; i++) {%>
+          <li class="message">
+            <span><%= messages[i].name %></span>
+            <span><%= messages[i].msg %></span>
+            <span><%= messages[i].thumbUp %></span>
+            <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+            <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+            <span>  <i class="fa fa-heart"></i></span>
+          </li>
+          <% } %>
+        </ul>
+
+        <h2>Add an Affirmation</h2>
+        <% if (user.local.email) { %>
+        <form action="/messages" method="POST">
+          <input type="text" value="<%= user.local.email %>" name="name">
+          <input type="text" placeholder="positive affirmation" name="msg">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <% } %>
+
       <!-- LOCAL INFORMATION -->
-      <div class="col-sm-6">
-        <div class="well">
+      <div class="col-sm-6" id="profileInfo">
+
           <h3><span class="fa fa-user"></span> User Profile Information</h3>
 
           <!-- PROFILE PHOTO UPLOAD & DELETE FEATURES -->
-          <div class="wrapper">
+          <!-- <div class="wrapper">
             <input type="file" name="userPhoto" id="image-upload" class="my_file" />
             <input type="hidden" name="deleteuserPhoto" value="1" />
-          </div>
+          </div> -->
 
           <!-- LOGGING INFO TO -->
           <% if (user.local.email) { %>
           <p>
             <strong>id</strong>: <%= user._id %><br>
             <strong>email</strong>: <%= user.local.email %><br>
-            <strong>password</strong>: <%= user.local.password %>
+            <span>
+            <!-- <strong>password</strong>: <%= user.local.password %>
+            </span> -->
           </p>
 
           <a href="/unlink/local" class="btn btn-default">Unlink</a>
@@ -60,34 +91,52 @@
 
         </div>
 
+        <div class="col-sm-12" id="grand">
+         <span> Disclaimer: </span>
+            Empowering the Military Mind is not a crisis intervention resource,
 
-      </div>
-      <div class="col-sm-6">
-        <h3>Messages</h3>
-        <ul class="messages">
-          <% for(var i=0; i<messages.length; i++) {%>
-          <li class="message">
-            <span><%= messages[i].name %></span>
-            <span><%= messages[i].msg %></span>
-            <span><%= messages[i].thumbUp %></span>
-            <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-            <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-          </li>
-          <% } %>
-        </ul>
+              I do encourage you in the  event of an emegency or crisis please
+              call 911 or the National Suicide Prevention Hotline.
 
-        <h2>Add a message</h2>
-        <% if (user.local.email) { %>
-        <form action="/messages" method="POST">
-          <input type="text" value="<%= user.local.email %>" name="name">
-          <input type="text" placeholder="message" name="msg">
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-      <% } %>
+            <br>IF THIS IS AN EMEGENCY <br>
+            If you’re thinking about suicide, are worried about a friend or loved one,
+            or would like emotional support, the Lifeline network is available
+            24/7 across the United States.
+
+            <a href="https://suicidepreventionlifeline.org/talk-to-someone-now/">Talk to someone now.</a>
+
+
+
+        </div>
 
     </div>
+
+
+  <br>
+   <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Footer -->
+    <footer>
+      <h2>Contact Miggie Garcia, Founder</h2>
+      <ul class="icons">
+        <li><a href="https://twitter.com/miggiegarciadev" class="icon brands twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="http://www.miggiegarciadev.com/" class="icon brands portfolio"><span class="label">Portfolio</span></a></li>
+        <li><a href="https://www.linkedin.com/in/miggiegarcia/" class="icon brands linkedin"><span class="label">Linked In</span></a></li>
+        <li><a href="https://github.com/miggiegarciadev" class="icon brands github"><span class="label">GitHub</span></a></li>
+        <li><a href="mailto:miggiegarciadev@gmail.com" class="icon brands email"><span class="label">Email</span></a></li>
+      </ul>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <script src="main.js"></script>
 
