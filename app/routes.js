@@ -31,6 +31,29 @@ module.exports = function(app, passport, db) {
     })
   });
 
+  // EMERGENCY PAGE FROM INDEX.EJS ====================
+  app.get('/emergency', function(req, res) {
+    res.render('emergency.ejs', {
+      message: req.flash('emergencymsg')
+    });
+  });
+
+  //CONTACTUS FROM index.ejs =========================
+  app.get('/contactUs', function(req, res) {
+    res.render('contactUs', {
+      message: req.flash('miggiegarciadev@gmail.com')
+    });
+  });
+//why is it flashing??
+
+// RESOURCES =========================
+app.get('/resources', function(req, res) {
+  res.render('resources.ejs', {
+    message: req.flash('emergencymsg')
+  });
+});
+
+
   // EMERGENCY=========================
   app.get('/emergency', isLoggedIn, function(req, res) {
     db.collection('messages').find().toArray((err, result) => {
@@ -41,6 +64,9 @@ module.exports = function(app, passport, db) {
       })
     })
   });
+
+
+
 
   // MISSION=========================
   //how do i get just the mission part of index to load when clicking on this?
@@ -55,6 +81,12 @@ module.exports = function(app, passport, db) {
     })
   });
 
+  // MISSION from navbars =========================
+  app.get('/mission', function(req, res) {
+    res.render('mission.ejs', {
+      message: req.flash('missionmsg')
+    });
+  });
 
   // MAKE A POST=========================
   //show me all the post user made
@@ -105,6 +137,13 @@ module.exports = function(app, passport, db) {
       })
     })
   });
+
+// PUBLIC BLOG ==============================
+app.get('/blog', function(req, res) {
+  res.render('blog.ejs', {
+    message: req.flash('public blog')
+  });
+});
 
   //save edit page ==========================
   //worked on this section with Mark (mentor)
@@ -246,23 +285,6 @@ module.exports = function(app, passport, db) {
       })
     })
   });
-
-
-
-
-  // RESOURSE =========================
-  app.get('/resources', isLoggedIn, function(req, res) {
-    db.collection('messages').find().toArray((err, result) => {
-      if (err) return console.log(err)
-      res.render('resources.ejs', {
-        user: req.user,
-        messages: result
-      })
-    })
-  });
-
-
-
 
 
 

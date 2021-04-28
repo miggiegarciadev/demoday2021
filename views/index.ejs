@@ -9,19 +9,25 @@
 <head>
 	<title>Empower & Elevate</title>
 	<meta charset="utf-8" />
+	<meta property="og:title" content="Full-stack App by Miggie Garcia" />
+	<meta property="og:description" content="Empowering the Military Mind After Service" />
+	<meta property="og:image" content="public/images/pic05.jpg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="https://kit.fontawesome.com/58eb5e6d41.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="is-preload" id="indexBod">
 	<!-- Navigation Bar -->
-	<nav class="navBar" id="indexNav">
-		<li><a href="/index" class="button primary">Home</a></li>
-		<li><a href="/emergency" class="button primary">Emergency</a></li>
-		<li><a href="#first" class="button primary" href="">Mission</a></li>
-		<li><a href="/login" class="button primary">Login</a></li>
-		<li><a href="/signup" class="button primary">Sign Up</a></li>
-		<li><a href="/contactUs" class="button primary">Contact Us</a></li>
+	<nav id="indexNav">
+		<li><a href="/index" class="btn btn-outline-dark">Home</a></li>
+		<li><a href="/emergency" class="btn btn-outline-dark">Emergency</a></li>
+		<li><a href="#first" class="btn btn-outline-dark" href="">Mission</a></li>
+		<li><a href="/login" class="btn btn-outline-dark">Login</a></li>
+		<li><a href="/signup" class="btn btn-outline-dark">Sign Up</a></li>
+		<li><a href="/contactUs" class="btn btn-outline-dark">Contact Us</a></li>
 	</nav>
 
 
@@ -29,17 +35,28 @@
 	<section id="header" class="dark">
 
 		<header>
-			<h1>Empowering the Military Mind After Service</h1>
-			<p>By Miggie Garcia</p>
+			<h1>Empowering the Military Mind;<br> After Service</h1>
+			<!-- <p>By Miggie Garcia</p> -->
 		</header>
 		<footer>
-			<!-- <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login  </a>
-					<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>  Signup</a>
-					<p></p>
-					<p></p> -->
 			<a href="#first" class="button scrolly">Mission</a>
 		</footer>
 	</section>
+
+	<!-- Overlay Warning -->
+	<input type="checkbox" name="close" id="closeBtn">
+	<div class="overlayWrap">
+		<div class="overlayWarn">
+			<label for="closeBtn" class="closeX"><i class="fas fa-times"></i></label>
+			<div class="container1">
+				<br>
+				<br>
+				<br>
+				<h1>Disclaimer: Empowering the Military Mind is NOT a crisis intervention resource, but I do encourage you in the event of an emegency or crisis please call 911 or the National Suicide Prevention Hotline. 1-800-273-8255</h1>
+				<p>Thank you! <3 </p>
+			</div>
+		</div>
+	</div>
 
 	<!-- First -->
 	<section id="first" class="main">
@@ -49,11 +66,9 @@
 				<h2>Mission Statement</h2>
 				<p>We, at "Empowering the Military Mind" want to help you with life after your service to your country. We first want to say thank you, and secondly want to tell you, that you are not alone! </p>
 				<p>Life can be tough, but so are you!</p>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
+			
+
+
 			</div>
 		</header>
 	</section>
@@ -81,9 +96,6 @@
 							<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
 								accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida dolore
 								euismod lorem ipsum dolor.</p>
-							<footer>
-								<a href="#third" class="button scrolly">Learn More...</a>
-							</footer>
 						</section>
 					</div>
 					<div class="col-8 col-12-narrow">
