@@ -3,18 +3,37 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Read More</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 
 <body>
-  <h1>hello world...</h1>
+  <header>
 
-<div class="newReadMorePost">
+    <nav>
+      <ul>
+        <a href="/index" class="button btn btn-outline-dark">Home</a>
+        <a href="/emergency" class="button btn btn-outline-dark">Emergency</a>
+        <a href="/#first" class="button btn btn-outline-dark">Mission</a>
+        <a href="/profile" class="button btn btn-outline-dark">Profile</a>
+        <a href="/resources" class="button btn btn-outline-dark">Resources</a>
+      </ul>
+    </nav>
 
-  <!-- i want to be able to see that specific article here  -->
+  </header>
+  <br>
+  <br>
+  <h1>Current Blog Post</h1>
+
+  <div class="newReadMorePost">
+
+    <!-- i want to be able to see that specific article here  -->
 
 
-  <% if (user.local.email) { %>
+    <% if (user.local.email) { %>
     <!-- this connects to the db on mongo, make sure that the collection key value pairs match up to the js variables -->
     <div class="card mt-4">
 
@@ -30,44 +49,55 @@
 
 
 
-          <!-- <a href="newarticle/edit" class="btn btn-info">Edit</a> -->
+        <!-- <a href="newarticle/edit" class="btn btn-info">Edit</a> -->
+      </div>
+      <% } %>
+
     </div>
-  <% } %>
-
-</div>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<!-- Footer -->
-<footer>
-  <h2>Contact Miggie Garcia, Founder</h2>
-  <ul class="icons">
-    <li><a href="https://twitter.com/miggiegarciadev" class="icon brands twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="http://www.miggiegarciadev.com/" class="icon brands portfolio"><span class="label">Portfolio</span></a></li>
-    <li><a href="https://www.linkedin.com/in/miggiegarcia/" class="icon brands linkedin"><span class="label">Linked In</span></a></li>
-    <li><a href="https://github.com/miggiegarciadev" class="icon brands github"><span class="label">GitHub</span></a></li>
-    <li><a href="mailto:miggiegarciadev@gmail.com" class="icon brands email"><span class="label">Email</span></a></li>
-  </ul>
-</footer>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+    <!-- disclaimer/emergency -->
+    <div class="col-sm-12" id="grand">
+      <span> Disclaimer: </span>
+      Empowering the Military Mind is not a crisis intervention resource,
+
+      I do encourage you in the event of an emegency or crisis please
+      call 911 or the National Suicide Prevention Hotline.
+
+      <br>IF THIS IS AN EMEGENCY <br>
+      If you’re thinking about suicide, are worried about a friend or loved one,
+      or would like emotional support, the Lifeline network is available
+      24/7 across the United States.
+
+      <a href="https://suicidepreventionlifeline.org/talk-to-someone-now/">Talk to someone now.</a>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <!-- Footer -->
+    <footer>
+      <p id="email2"> “Resilience is accepting your new reality, even if it's less good than the one you had before. You can fight it, you can do nothing but scream about what you've lost, or you can accept that and try to put together something
+        that's good.”
+        <br>
+        ― Elizabeth Edwards
+      </p>
+    </footer>
+
 
 
 </body>
-
-
 
 </html>

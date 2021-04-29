@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/main.css">
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog</title>
 </head>
@@ -13,17 +15,17 @@
 
   <nav class="site-navBar">
     <ul class="ulofnavbar" id="green">
-    <li><a href="/index" class="button primary">Home</a></li>
-    <li><a href="/emergency" class="button primary">Emergency</a></li>
-    <li><a href="/#first" class="button primary">Mission</a></li>
-    <li><a href="/blogposting" class="button primary">Make a post</a></li>
-    <li><a href="/blog" class="button primary">Blog</a></li>
-    <li><a href="/resources" class="button primary">Resources</a></li>
+      <li><a href="/index" class="btn btn-outline-dark">Home</a></li>
+      <li><a href="/emergency" class="btn btn-outline-dark">Emergency</a></li>
+      <li><a href="/mission" class="btn btn-outline-dark">Mission</a></li>
+      <li><a href="/blogposting" class="btn btn-outline-dark">Make a post</a></li>
+      <li><a href="/blog" class="btn btn-outline-dark">Blog</a></li>
+      <li><a href="/resources" class="btn btn-outline-dark">Resources</a></li>
     </ul>
   </nav>
 
   <div class="container">
-    <h1 class="mb-4">New Article</h1>
+    <h1 class="mb-4">New Blog Post</h1>
 
     <% if (user.local.email) { %>
 
@@ -56,10 +58,10 @@
       </div>
 
 
-  <button type="submit">Save</button>
+  <button type="submit" class="btn btn-outline-dark">Save  </button>
     </form>
-
-    <a href="/blogposting" class="btn btn-secondary">Cancel</a>
+    <br>
+    <a href="/blogposting" class="btn btn-outline-dark">Cancel</a>
   </div>
 
   <% } %>
@@ -73,8 +75,8 @@
   <br>
   <br>
   <!-- Footer -->
-  <footer>
-    <h2>Contact Miggie Garcia, Founder</h2>
+  <footer id="footer">
+    <h2 id="email2">Contact Miggie Garcia, Founder</h2>
     <ul class="icons">
       <li><a href="https://twitter.com/miggiegarciadev" class="icon brands twitter"><span class="label">Twitter</span></a></li>
       <li><a href="http://www.miggiegarciadev.com/" class="icon brands portfolio"><span class="label">Portfolio</span></a></li>

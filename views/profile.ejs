@@ -3,131 +3,133 @@
 
 <head>
   <title>Profile, EM</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
 </head>
 
-<body class = "profilepg">
-  <nav class="site-navBar">
-    <ul class="ulofnavbar" id="green">
-    <li><a href="/index" class="button primary">Home</a></li>
-    <li><a href="/blogposting" class="button primary">Make a post</a></li>
-    <li><a href="/blog" class="button primary">Blog</a></li>
-    <li><a href="/resources" class="button primary">Resources</a></li>
-    <li><a href="/logout" class="button primary">Logout</a></li>
+<body class="profilepg">
+  <nav id="indexNav">
+    <ul>
+      <li><a href="/index" class="btn btn-outline-dark">Home</a></li>
+      <li><a href="/emergency" class="btn btn-outline-dark">Emergency</a></li>
+      <li><a href="/mission" class="btn btn-outline-dark" href="">Mission</a></li>
+      <li><a href="/blogposting" class="btn btn-outline-dark">Make a post</a></li>
+      <!-- <li><a href="/blog" class="btn btn-outline-dark">Blog</a></li> -->
+      <li><a href="/resources" class="btn btn-outline-dark">Resources</a></li>
+      <li><a href="/logout" class="btn btn-outline-dark">Logout</a></li>
     </ul>
   </nav>
 
-<br>
-<br>
-<br>
-
-<h1>My Profile</h1>
+  <br>
+  <br>
+  <br>
+  <br>
 
   <div class="container">
+
+    <span>
+      <h1>My Profile</h1>
+    </span>
 
     <div class="page-header text-center">
     </div>
 
-<br>
+    <br>
+    <br>
+
 
     <div class="row">
 
-
-
-      <div class="col-sm-6" id="affirm">
-        <h3>Affirmations</h3>
+      <div class="col-sm-8" id="affirm">
+        <h2>Daily Affirmations</h2>
         <ul class="messages">
           <% for(var i=0; i< messages.length; i++) {%>
           <li class="message">
             <span><%= messages[i].name %></span>
             <span><%= messages[i].msg %></span>
-            <span><%= messages[i].thumbUp %></span>
-            <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-            <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-            <span>  <i class="fa fa-heart"></i></span>
+            <!-- <span><%= messages[i].thumbUp %></span> -->
+            <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+            <!-- <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span> -->
+            <!-- <span>  <i class="fa fa-heart"></i></span> -->
           </li>
           <% } %>
         </ul>
-
+        <br>
         <h2>Add an Affirmation</h2>
         <% if (user.local.email) { %>
         <form action="/messages" method="POST">
           <input type="text" value="<%= user.local.email %>" name="name">
           <input type="text" placeholder="positive affirmation" name="msg">
+          <br>
           <button type="submit">Submit</button>
         </form>
+        <br>
       </div>
       <% } %>
 
       <!-- LOCAL INFORMATION -->
-      <div class="col-sm-6" id="profileInfo">
+      <div class="col-sm-4" id="profileInfo">
 
-          <h3><span class="fa fa-user"></span> User Profile Information</h3>
-
-          <!-- PROFILE PHOTO UPLOAD & DELETE FEATURES -->
-          <!-- <div class="wrapper">
-            <input type="file" name="userPhoto" id="image-upload" class="my_file" />
-            <input type="hidden" name="deleteuserPhoto" value="1" />
-          </div> -->
-
-          <!-- LOGGING INFO TO -->
-          <% if (user.local.email) { %>
-          <p>
-            <strong>id</strong>: <%= user._id %><br>
-            <strong>email</strong>: <%= user.local.email %><br>
-            <span>
-            <!-- <strong>password</strong>: <%= user.local.password %>
-            </span> -->
-          </p>
-
-          <a href="/unlink/local" class="btn btn-default">Unlink</a>
-          <% } else { %>
-          <a href="/connect/local" class="btn btn-default">Connect Local</a>
-          <% } %>
-
-        </div>
-
-        <div class="col-sm-12" id="grand">
-         <span> Disclaimer: </span>
-            Empowering the Military Mind is not a crisis intervention resource,
-
-              I do encourage you in the  event of an emegency or crisis please
-              call 911 or the National Suicide Prevention Hotline.
-
-            <br>IF THIS IS AN EMEGENCY <br>
-            If you’re thinking about suicide, are worried about a friend or loved one,
-            or would like emotional support, the Lifeline network is available
-            24/7 across the United States.
-
-            <a href="https://suicidepreventionlifeline.org/talk-to-someone-now/">Talk to someone now.</a>
+        <h3><span class="fa fa-user"></span> User Profile Info</h3>
 
 
 
-        </div>
+        <!-- LOGGING INFO TO -->
+        <% if (user.local.email) { %>
+        <p>
+          <strong>id</strong>: <%= user._id %><br>
+          <strong>email</strong>: <%= user.local.email %><br>
+          <span>
+        </p>
+
+        <a href="/unlink/local" class="btn btn-dark">Log Out</a>
+        <% } else { %>
+        <a href="/connect/local" class="btn btn-dark">Connect Local</a>
+        <% } %>
+
+      </div>
 
     </div>
 
+    <br>
+    <br>
 
-  <br>
-   <br>
+
+    <!-- disclaimer/emergency -->
+    <div class="col-sm-12" id="grand">
+      <span> Disclaimer: </span>
+      Empowering the Military Mind is not a crisis intervention resource,
+
+      I do encourage you in the event of an emegency or crisis please
+      call 911 or the National Suicide Prevention Hotline.
+
+      <br>IF THIS IS AN EMEGENCY <br>
+      If you’re thinking about suicide, are worried about a friend or loved one,
+      or would like emotional support, the Lifeline network is available
+      24/7 across the United States.
+
+      <a href="https://suicidepreventionlifeline.org/talk-to-someone-now/">Talk to someone now.</a>
+    </div>
+
     <br>
     <br>
     <br>
     <br>
+
     <!-- Footer -->
-    <footer>
-      <h2>Contact Miggie Garcia, Founder</h2>
-      <ul class="icons">
-        <li><a href="https://twitter.com/miggiegarciadev" class="icon brands twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="http://www.miggiegarciadev.com/" class="icon brands portfolio"><span class="label">Portfolio</span></a></li>
-        <li><a href="https://www.linkedin.com/in/miggiegarcia/" class="icon brands linkedin"><span class="label">Linked In</span></a></li>
-        <li><a href="https://github.com/miggiegarciadev" class="icon brands github"><span class="label">GitHub</span></a></li>
-        <li><a href="mailto:miggiegarciadev@gmail.com" class="icon brands email"><span class="label">Email</span></a></li>
-      </ul>
+    <footer id="footer">
+      <div class="founderInfo">
+        <h2 id="email2">Contact Miggie Garcia, Founder</h2>
+        <ul class="icons">
+          <li><a href="https://twitter.com/miggiegarciadev" class="icon brands twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="http://www.miggiegarciadev.com/" class="icon brands portfolio"><span class="label">Portfolio</span></a></li>
+          <li><a href="https://www.linkedin.com/in/miggiegarcia/" class="icon brands linkedin"><span class="label">Linked In</span></a></li>
+          <li><a href="https://github.com/miggiegarciadev" class="icon brands github"><span class="label">GitHub</span></a></li>
+          <li><a href="mailto:miggiegarciadev@gmail.com" class="icon brands email"><span class="label">Email</span></a></li>
+        </ul>
+      </div>
     </footer>
 
     <!-- Scripts -->
